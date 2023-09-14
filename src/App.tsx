@@ -1,35 +1,70 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  type messageError = { code: number, message: string};
+
+  function success(pos: GeolocationPosition){
+    const coordenadas = pos.coords;
+    console.log(pos)
+
+    console.log("Sualocalização atual é:");
+    console.log(`Latitude: ${coordenadas.latitude}`);
+    console.log(`Longitude: ${coordenadas.longitude}`);
+    console.log(`Mais ou menos ${coordenadas.accuracy} metros`);
+  }
+
+  function errors(error: messageError){
+    console.warn(`ERROR(${error.code}): ${error.message}`);
+  }
+
+  const options = { enableHighAccuracy: true, timeout: 5000, maximumAge: 0};
+
+  useEffect(() => {
+    if (navigator.geolocation){
+      navigator.permissions .query({ name: "geolocation" }) .then(function (result) { console.log(result); 
+        if(result.state === "granted"){
+          navigator.geolocation.getCurrentPosition(success, errors, options);
+        }else if(result.state === "prompt"){
+          navigator.geolocation.getCurrentPosition(success, errors, options);
+        }else if(result.state === "denied"){
+          console.log("Negado");
+        }
+      }); 
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
+
+    // https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
+  }, []);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Hello React</h1>
     </>
   )
 }
 
 export default App
+
+
+// useEffect(() => { 
+  // if (navigator.geolocation) {
+    // navigator.permissions .query({ name: "geolocation" }).then(function (result) { console.log(result);
+    //   if (result.state === "granted") {
+           //If granted then you can directly call your function here 
+    //   } else if (result.state === "prompt") {
+           //If prompt then the user will be asked to give permission 
+    //   } else if (result.state === "denied") {
+           //If denied then you have to show instructions to enable location } }); 
+    //   } else { console.log("Geolocation is not supported by this browser."); } 
+  // }, []);
+
+
+
+
+
+
+
+
+
