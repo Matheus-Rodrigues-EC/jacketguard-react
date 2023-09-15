@@ -106,7 +106,7 @@ function Home(){
         if (navigator.geolocation){
         navigator.permissions.query({ name: "geolocation" }).then(function (result) {
             if(result.state === "granted"){
-            navigator.geolocation.getCurrentPosition(getCoordenates, errors, options);
+            navigator.geolocation.getCurrentPosition(getCoordenates, errors, options, LoadLocalCoord(coordenates));
             LoadLocalCoord(coordenates);
             }else if(result.state === "prompt"){
             navigator.geolocation.getCurrentPosition(getCoordenates, errors, options);
