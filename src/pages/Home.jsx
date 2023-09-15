@@ -85,10 +85,12 @@ function Home(){
                 const timer = days*8;
                 const result = res.data.list.slice(0, timer);
                 const array = result.map((item) => {
-                    if(days > 1){
+                    if(days == 1){
+                        return ({name: item.dt_txt.slice(-9, -3), temp: item.main.temp})
+                    }else if(days > 1 && days < 4){
                         return ({name: item.dt_txt.slice(5, -3), temp: item.main.temp})
                     }else{
-                        return ({name: item.dt_txt.slice(-9, -3), temp: item.main.temp})
+                        return ({name: item.dt_txt.slice(5, 10), temp: item.main.temp})
                     }
                 })
                 setData(array);
