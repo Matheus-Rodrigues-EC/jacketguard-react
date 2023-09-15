@@ -21,13 +21,12 @@ function Home(){
     const [days, setDays] = useState(5);
 
     function getCoordenates(pos){
-        const coordenadas = pos.coords;
-        setCoordenates({lat: coordenadas.latitude.toFixed(2), lon: coordenadas.longitude.toFixed(2)});
+        setCoordenates({lat: pos.coords.latitude.toFixed(2), lon: pos.coords.longitude.toFixed(2)});
+        LoadLocalCoord({lat: pos.coords.latitude.toFixed(2), lon: pos.coords.longitude.toFixed(2)});
+        LoadForecastCoord({lat: pos.coords.latitude.toFixed(2), lon: pos.coords.longitude.toFixed(2)});
     }
 
-
     function LoadLocalCoord(coordenates){
-
         axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${coordenates.lat}&lon=${coordenates.lon}&units=metric&lang=pt_br&appid=2ce3909f502db67377b6f769db60fcfd`)
             .then((res) => {
                 setCity(res.data.name);
@@ -77,10 +76,10 @@ function Home(){
                 console.log(error);
             })
 
-            LoadForecastCoord()
+            LoadForecastCoord(coordenates);
     }
 
-    function LoadForecastCoord(){
+    function LoadForecastCoord(coordenates){
         axios.get('https://api.openweathermap.org/data/2.5/forecast?lat='+coordenates.lat+'&lon='+coordenates.lon+'&units=metric&lang=pt_br&appid=2ce3909f502db67377b6f769db60fcfd')
             .then((res) => {
                 const timer = days*8;
@@ -107,7 +106,7 @@ function Home(){
         navigator.permissions.query({ name: "geolocation" }).then(function (result) {
             if(result.state === "granted"){
             navigator.geolocation.getCurrentPosition(getCoordenates, errors, options, LoadLocalCoord(coordenates));
-            LoadLocalCoord(coordenates);
+            // LoadLocalCoord(coordenates);
             }else if(result.state === "prompt"){
             navigator.geolocation.getCurrentPosition(getCoordenates, errors, options);
             LoadLocalCoord(coordenates);
