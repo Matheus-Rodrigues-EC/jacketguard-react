@@ -119,7 +119,7 @@ function Home(){
         console.log("Geolocation is not supported by this browser.");
         }
 
-    }, [city]);
+    }, [city, cityName]);
 
     return (
         <Container>
