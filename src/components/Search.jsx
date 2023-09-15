@@ -9,6 +9,10 @@ function Search(props){
     function LoadCityName(){
         axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName},BR&limit=1&appid=2ce3909f502db67377b6f769db60fcfd`)
             .then((res) => {
+                if(res.data.length === 0){
+                    return alert(`Cidade não encontrada.\nVerifique o nome da cidade`);
+                    
+                }
                 const result = res.data[0];
                 setCoordenates({lat: result.lat, lon: result.lon});
                 LoadLocalCoord({lat: result.lat, lon: result.lon});
