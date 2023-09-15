@@ -19,8 +19,6 @@ function Search(props){
             })
     }
 
-
-
     return (
         <Container>
             <Form>
