@@ -119,7 +119,7 @@ function Home(){
         console.log("Geolocation is not supported by this browser.");
         }
 
-    }, [temp, wind, weather]);
+    }, [city, temp, wind, weather, data, coordenates]);
 
     return (
         <Container>
