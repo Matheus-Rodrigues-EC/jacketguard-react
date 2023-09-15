@@ -4,7 +4,7 @@ import axios from "axios";
 
 function Search(props){
 
-    const {cityName, setCityName, colorbackground, colortext, setCoordenates, LoadLocalCoord, setDays} = props;
+    const {cityName, setCityName, colorbackground, colortext, setCoordenates, LoadLocalCoord, LoadForecastCoord, setDays} = props;
 
     function LoadCityName(){
         axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName},BR&limit=1&appid=2ce3909f502db67377b6f769db60fcfd`)
@@ -12,6 +12,7 @@ function Search(props){
                 const result = res.data[0];
                 setCoordenates({lat: result.lat, lon: result.lon});
                 LoadLocalCoord({lat: result.lat, lon: result.lon});
+                LoadForecastCoord({lat: result.lat, lon: result.lon});
             })
             .catch((error) => {
                 console.log(error);

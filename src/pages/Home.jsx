@@ -76,7 +76,7 @@ function Home(){
                 console.log(error);
             })
 
-            LoadForecastCoord(coordenates);
+            // LoadForecastCoord(coordenates);
     }
 
     function LoadForecastCoord(coordenates){
@@ -105,8 +105,11 @@ function Home(){
         if (navigator.geolocation){
         navigator.permissions.query({ name: "geolocation" }).then(function (result) {
             if(result.state === "granted"){
-            navigator.geolocation.getCurrentPosition(getCoordenates, errors, options, LoadLocalCoord(coordenates));
-            // LoadLocalCoord(coordenates);
+            if(coordenates.lat == 0){
+                navigator.geolocation.getCurrentPosition(getCoordenates, errors, options);
+            }else{
+                LoadLocalCoord(coordenates);
+            }
             }else if(result.state === "prompt"){
             navigator.geolocation.getCurrentPosition(getCoordenates, errors, options);
             LoadLocalCoord(coordenates);
@@ -122,7 +125,7 @@ function Home(){
 
     return (
         <Container>
-            <Search cityName={cityName} setCityName={setCityName} colorbackground={colorbackground} colortext={colortext} coordenates={coordenates} setCoordenates={setCoordenates} LoadLocalCoord={LoadLocalCoord} days={days} setDays={setDays} />
+            <Search cityName={cityName} setCityName={setCityName} colorbackground={colorbackground} colortext={colortext} coordenates={coordenates} setCoordenates={setCoordenates} LoadLocalCoord={LoadLocalCoord} LoadForecastCoord={LoadForecastCoord} days={days} setDays={setDays} />
             <Infos city={city} temp={temp} wind={wind} weather={weather} colorbackground={colorbackground} colortext={colortext} />
             <Forecast colorbackground={colorbackground} colortext={colortext} data={data} />
         </Container>
