@@ -108,6 +108,7 @@ function Home(){
             if(result.state === "granted"){
             navigator.geolocation.getCurrentPosition(getCoordenates, errors, options);
             LoadLocalCoord(coordenates);
+            location.reload();
             }else if(result.state === "prompt"){
             navigator.geolocation.getCurrentPosition(getCoordenates, errors, options);
             LoadLocalCoord(coordenates);
