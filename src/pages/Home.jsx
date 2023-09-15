@@ -108,7 +108,6 @@ function Home(){
             if(result.state === "granted"){
             navigator.geolocation.getCurrentPosition(getCoordenates, errors, options);
             LoadLocalCoord(coordenates);
-            location.reload();
             }else if(result.state === "prompt"){
             navigator.geolocation.getCurrentPosition(getCoordenates, errors, options);
             LoadLocalCoord(coordenates);
@@ -120,7 +119,7 @@ function Home(){
         console.log("Geolocation is not supported by this browser.");
         }
 
-    }, [city]);
+    }, [city, coordenates]);
 
     return (
         <Container>
