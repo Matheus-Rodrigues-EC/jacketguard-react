@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import Navbar from './components/Navbar';
 import Home from "./pages/Home";
-import BackGround from '/background.jpg'
+import BackGround from './assets/background.jpg'
 
 function App() {
 

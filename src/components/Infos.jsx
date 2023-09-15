@@ -25,7 +25,7 @@ function Infos(props){
                     <Speed colortext={colortext}>{wind.speed}km/h</Speed>
                 </Wind>
                 <TemperatureNow colortext={colortext}>
-                    {temp ? temp.temp : 'Carregando...'}ºC
+                    {temp ? temp.temp : 'Carregando...'}ºC 🌡️
                 </TemperatureNow>
             </Temperature>
         </Container>

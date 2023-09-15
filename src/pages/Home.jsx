@@ -34,13 +34,13 @@ function Home(){
                 setTemp({temp: res.data.main.temp, min: res.data.main.temp_min, max: res.data.main.temp_max, humidity: res.data.main.humidity})
                 setWind({speed: res.data.wind.speed, deg: res.data.wind.deg})
                 let tempo = ''
-                if(res.data.weather[0].main === 'Clear') tempo = 'Céu aberto';
-                if(res.data.weather[0].main === 'Clouds') tempo = 'Nublado';
-                if(res.data.weather[0].main === 'Rain') tempo = 'Chovendo';
-                if(res.data.weather[0].main === 'Snow') tempo = 'Nevando';
-                if(res.data.weather[0].main === 'Thunderstorm') tempo = 'Tempestade';
-                if(res.data.weather[0].main === 'Drizzle') tempo = 'Chuviscando';
-                if(res.data.weather[0].main === 'Mist') tempo = 'Neblina';
+                if(res.data.weather[0].main === 'Clear') tempo = '☀️ Céu aberto 🌗';
+                if(res.data.weather[0].main === 'Clouds') tempo = '☁️ Nublado ☁️';
+                if(res.data.weather[0].main === 'Rain') tempo = '🌧️ Chovendo 🌧️';
+                if(res.data.weather[0].main === 'Snow') tempo = '🌨️ Nevando 🌨️';
+                if(res.data.weather[0].main === 'Thunderstorm') tempo = '⛈️ Tempestade ⛈️';
+                if(res.data.weather[0].main === 'Drizzle') tempo = '🌦️ Chuviscando 🌦️';
+                if(res.data.weather[0].main === 'Mist') tempo = '🌫️ Neblina 🌫️';
                 setWeather({status: res.data.weather[0].main, description: tempo})
 
                 if(weather.status === 'Clear'){
