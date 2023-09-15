@@ -85,7 +85,11 @@ function Home(){
                 const timer = days*8;
                 const result = res.data.list.slice(0, timer);
                 const array = result.map((item) => {
-                    return ({name: item.dt_txt.slice(0, 10), temp: item.main.temp})
+                    if(days > 1){
+                        return ({name: item.dt_txt.slice(5, -3), temp: item.main.temp})
+                    }else{
+                        return ({name: item.dt_txt.slice(-9, -3), temp: item.main.temp})
+                    }
                 })
                 setData(array);
             })
@@ -109,6 +113,7 @@ function Home(){
                 navigator.geolocation.getCurrentPosition(getCoordenates, errors, options);
             }else{
                 LoadLocalCoord(coordenates);
+                LoadForecastCoord(coordenates);
             }
             }else if(result.state === "prompt"){
             navigator.geolocation.getCurrentPosition(getCoordenates, errors, options);
