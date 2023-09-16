@@ -17,7 +17,7 @@ function Home(){
     const [colortext, setColorText] = useState('black');
     const [data, setData] = useState([]);
     const [cityName, setCityName] = useState('');
-    const [coordenates, setCoordenates] = useState({lat: '0', lon: '0'});
+    const [coordenates, setCoordenates] = useState({lat: '', lon: ''});
     const [days, setDays] = useState(5);
 
     function getCoordenates(pos){
