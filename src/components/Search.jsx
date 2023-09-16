@@ -76,7 +76,6 @@ const Input = styled.input`
 `
 const Button = styled.button`
     display: flex;
-
     margin: 50px auto 50px 5px;
     width: 14%;
     height: 35px;
@@ -95,6 +94,13 @@ const Button = styled.button`
     font-family: 'Merriweather', serif;
     font-weight: 300;
     font-size: 20px;
+
+    &:hover {
+        box-shadow: 0 0 15px ${props => props.colorbackground};
+        background-color: ${props => props.colorbackground};
+        transition: 0.5s;
+    }
+    transition: 0.5s;
 
     cursor: pointer;
     transition: 2s;

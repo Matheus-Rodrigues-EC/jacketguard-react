@@ -88,7 +88,7 @@ function Home(){
                     if(days == 1){
                         return ({name: item.dt_txt.slice(-9, -3), temp: item.main.temp})
                     }else if(days > 1 && days < 4){
-                        return ({name: item.dt_txt.slice(5, -3), temp: item.main.temp})
+                        return ({name: item.dt_txt.slice(8, -3), temp: item.main.temp})
                     }else{
                         return ({name: item.dt_txt.slice(5, 10), temp: item.main.temp})
                     }

@@ -8,7 +8,7 @@ function Forecast(props){
 
     return (
         <Container colorbackground={colorbackground} colortext={colortext}>
-            <LineChart  width={600} height={230} data={data} margin={{ top: 25, left: 0, right: 30, bottom: 5 }}>
+            <LineChart  width={1000} height={230} data={data} margin={{ top: 25, left: 15, right: 60, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
                 <YAxis dataKey=""/>
@@ -27,7 +27,7 @@ const Container = styled.div`
     height: 250px;
     align-items: center;
     justify-content: center;
-    margin: 50px auto;
+    margin: 30px auto;
     border-radius: 25px;
     box-sizing: border-box;
     background-color: black;
