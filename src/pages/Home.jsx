@@ -75,8 +75,6 @@ function Home(){
             .catch((error) => {
                 console.log(error);
             })
-
-            // LoadForecastCoord(coordenates);
     }
 
     function LoadForecastCoord(coordenates){
@@ -128,7 +126,7 @@ function Home(){
         console.log("Geolocation is not supported by this browser.");
         }
 
-    }, [city, colorbackground, colortext, days]);
+    }, [city, colorbackground, colortext, days, setDays]);
 
     return (
         <Container>
