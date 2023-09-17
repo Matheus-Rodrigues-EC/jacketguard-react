@@ -33,12 +33,12 @@ function Search(props){
             </Form>
             <Busca>
                 <Label>Escolha a previsão em dias. </Label>
-                <Select name="Escolha a previsão em dias" onClick={(e) => setDays((e.target.value))}>
+                <Select name="Escolha a previsão em dias" onChange={(e) => setDays((e.target.value))}>
                     <Option value={5} selected > 5 dias </Option>
-                    <Option value={4} > 4 dias </Option>
-                    <Option value={3} > 3 dias </Option>
-                    <Option value={2} > 2 dias </Option>
-                    <Option value={1} > 1 dia </Option>
+                    <Option value={4} > 4 dias  </Option>
+                    <Option value={3} > 3 dias  </Option>
+                    <Option value={2} > 2 dias  </Option>
+                    <Option value={1} > 1 dia   </Option>
                 </Select>
             </Busca>
         </Container>
