@@ -56,7 +56,7 @@ export default Infos;
 const Container = styled.div`
     display: flex;
     margin: auto;
-    width: 50%;
+    width: 85%;
     height: 200px;
     justify-content: space-around;
     border-radius: 25px;
@@ -71,14 +71,14 @@ const Container = styled.div`
 const HeaderInfos = styled.div`
     display: flex;
     flex-direction: column;
-    width: 275px;
+    width: 50%;
     justify-content: space-between;
     transition: 1.5s;
 `
 const City = styled.h1`
     font-family: 'Merriweather', serif;
     font-weight: 300;
-    font-size: 20px;
+    font-size: 1rem;
 
     color: ${props => props.colortext};
     -webkit-text-stroke: 5%;
@@ -89,7 +89,7 @@ const City = styled.h1`
 const WeatherNow = styled.p`
     font-family: 'Merriweather', serif;
     font-weight: 300;
-    font-size: 15px;
+    font-size: .75rem;
     color: ${props => props.colortext};
     -webkit-text-stroke: 5%;
     -webkit-text-stroke-color: ${props => props.colortext === 'black' ? 'white' : 'black'};
@@ -98,7 +98,7 @@ const WeatherNow = styled.p`
 const Temperature = styled.div`
     display: flex;
     flex-direction: column;
-    width: 275px;
+    width: 50%;
     justify-content: space-between;
     align-items: end;
     padding-bottom: 15px;
@@ -114,12 +114,12 @@ const Wind = styled.div`
     flex-direction: column;
     align-items: center;;
     gap: 15px;
-    width: 100px;
+    width: 30%;
 `
 const Speed = styled.p`
     font-family: 'Merriweather', serif;
     font-weight: 300;
-    font-size: 20px;
+    font-size: 1rem;
     color: ${props => props.colortext};
     -webkit-text-stroke: 5%;
     -webkit-text-stroke-color: ${props => props.colortext === 'black' ? 'white' : 'black'};
@@ -139,7 +139,7 @@ const PrimaryDirection = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 1rem;
     color: ${props => props.colortext};
     transition: 1.5s;
 `
@@ -147,13 +147,13 @@ const SecondaryDirection = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 10px;
+    font-size: .5rem;
     color: ${props => props.colortext};
     transition: 1.5s;
 `
 const ArrowDirection = styled.img`
     display: flex;
-    width: 35px;
+    width: 1.5rem;
     transform: rotate(${props => props.wind.deg}deg);
     transition: 1.5s;
     color: ${props => props.colortext};
@@ -162,16 +162,17 @@ const ArrowDirection = styled.img`
 const Min_Max = styled.p`
     font-family: 'Merriweather', serif;
     font-weight: 300;
-    font-size: 15px;
+    font-size: .75rem;
     color: ${props => props.colortext};
     -webkit-text-stroke: 5%;
     -webkit-text-stroke-color: ${props => props.colortext === 'black' ? 'white' : 'black'};
     width: fit-content;
+    transition: 1.5s;
 `
 const TemperatureNow = styled.div`
 font-family: 'Merriweather', serif;
     font-weight: 500;
-    font-size: 35px;
+    font-size: 1.25rem;
     color: ${props => props.colortext};
     -webkit-text-stroke: 5%;
     -webkit-text-stroke-color: ${props => props.colortext === 'black' ? 'white' : 'black'};

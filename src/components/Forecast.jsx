@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import styled from 'styled-components';
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 function Forecast(props){
 
@@ -8,13 +8,15 @@ function Forecast(props){
 
     return (
         <Container colorbackground={colorbackground} colortext={colortext}>
-            <LineChart  width={1000} height={230} data={data} margin={{ top: 25, left: 15, right: 60, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis dataKey=""/>
-                <Tooltip />
-                <Line type="monotone" amplitude="ºC" dataKey="temp" stroke="#FF0000" />
-            </LineChart>
+            <ResponsiveContainer width="100%" height="100%">
+                <LineChart   data={data} margin={{ top: 10, left: 0, right: 15, bottom: 5 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis dataKey=""/>
+                    <Tooltip />
+                    <Line type="monotone" amplitude="ºC" dataKey="temp" stroke="#FF0000" />
+                </LineChart>
+            </ResponsiveContainer>
         </Container>
     )
 }
@@ -23,13 +25,13 @@ export default Forecast;
 
 const Container = styled.div`
     display: flex;
-    width: 65%;
-    height: 250px;
+    width: 95%;
+    height: 12.5rem;
     align-items: center;
     justify-content: center;
-    margin: 30px auto;
+    margin: 1rem auto;
     border-radius: 25px;
     box-sizing: border-box;
     background-color: black;
-    transition: 5s;
+    transition: 3s;
 `

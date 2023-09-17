@@ -65,7 +65,7 @@ const Input = styled.input`
     display: flex;
 
     margin: 50px 5px 50px auto;
-    width: 35%;
+    width: 50%;
     height: 30px;
 
     border-radius: 5px;
@@ -73,11 +73,12 @@ const Input = styled.input`
     font-family: 'Merriweather', serif;
     font-weight: 300;
     font-size: 20px;
+    transition: 1.5s;
 `
 const Button = styled.button`
     display: flex;
     margin: 50px auto 50px 5px;
-    width: 14%;
+    width: 25%;
     height: 35px;
     background-color: ${props => props.colorbackground};
     color: ${props => props.colortext};
@@ -93,7 +94,7 @@ const Button = styled.button`
 
     font-family: 'Merriweather', serif;
     font-weight: 300;
-    font-size: 20px;
+    font-size: .75rem;
 
     &:hover {
         box-shadow: 0 0 15px ${props => props.colorbackground};
