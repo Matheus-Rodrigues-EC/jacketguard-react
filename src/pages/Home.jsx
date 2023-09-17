@@ -128,7 +128,7 @@ function Home(){
         console.log("Geolocation is not supported by this browser.");
         }
 
-    }, [city, colorbackground, colortext]);
+    }, [city, colorbackground, colortext, days]);
 
     return (
         <Container>
