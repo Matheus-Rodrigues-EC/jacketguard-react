@@ -55,8 +55,8 @@ export default Infos;
 
 const Container = styled.div`
     display: flex;
-    margin: auto;
-    width: 85%;
+    margin: 1.5% auto;
+    width: 95%;
     height: 200px;
     justify-content: space-around;
     border-radius: 25px;

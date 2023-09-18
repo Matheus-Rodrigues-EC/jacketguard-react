@@ -130,7 +130,7 @@ function Home(){
 
     return (
         <Container>
-            <Search cityName={cityName} setCityName={setCityName} colorbackground={colorbackground} colortext={colortext} coordenates={coordenates} setCoordenates={setCoordenates} LoadLocalCoord={LoadLocalCoord} LoadForecastCoord={LoadForecastCoord} days={days} setDays={setDays} />
+            <Search cityName={cityName} setCityName={setCityName} colorbackground={colorbackground} colortext={colortext} setCoordenates={setCoordenates} LoadLocalCoord={LoadLocalCoord} LoadForecastCoord={LoadForecastCoord} days={days} setDays={setDays} />
             <Infos city={city} temp={temp} wind={wind} weather={weather} colorbackground={colorbackground} colortext={colortext} />
             <Forecast colorbackground={colorbackground} colortext={colortext} data={data} />
         </Container>
@@ -141,4 +141,5 @@ export default Home;
 
 const Container = styled.div`
     height: auto;
+    width: 100%;
 `

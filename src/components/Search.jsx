@@ -72,7 +72,7 @@ const Input = styled.input`
 
     font-family: 'Merriweather', serif;
     font-weight: 300;
-    font-size: 20px;
+    font-size: 1rem;
     transition: 1.5s;
 `
 const Button = styled.button`

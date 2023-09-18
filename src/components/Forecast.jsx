@@ -29,7 +29,7 @@ const Container = styled.div`
     height: 12.5rem;
     align-items: center;
     justify-content: center;
-    margin: 1rem auto;
+    margin: 2rem auto;
     border-radius: 25px;
     box-sizing: border-box;
     background-color: black;
