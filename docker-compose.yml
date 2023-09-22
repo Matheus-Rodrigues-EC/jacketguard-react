@@ -1,0 +1,18 @@
+# Aqui é especificada a versão do compose, verifique sempre se a versão
+# é compativel com o docker
+version: "3"
+# Aqui é definido o serviço para executar em um ambiente isolado
+services:
+# O nome do serviço pode ser qualquer um, nesse caso eu escolhi 'dockerizado'
+  dockerized:
+# este comando nos permite executar comandos enquanto o contêiner 
+# está em rodando
+    stdin_open: true
+    build:
+      context: .
+# O serviço requer a especificação no build de um arquivo docker
+      dockerfile: Dockerfile
+# Aqui especficicamos o mapeamento de portas.
+# Mapeamos a porta padrão do nginx (80) para a porta 5000
+    ports:
+      - "0.0.0.0:5000:80"
